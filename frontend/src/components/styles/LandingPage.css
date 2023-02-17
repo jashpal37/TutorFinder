@@ -1,0 +1,39 @@
+.main{
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../../background1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.title{
+    font-size: 85px;
+}
+.subtitle{
+    font-size: 25px;
+    padding-top: 10;
+}
+.intro-text{
+    width: 100%;
+    text-align: center;
+    margin: 80px 10px 150px 50px;
+}
+.buttonContainer{
+    margin-top: 100px;
+    display: flex;
+    justify-content:space-evenly;
+}
+.landingbutton{
+    width:150px;
+    height: 55px;
+}
+
+@media only screen and (max-width: 1200px){
+    .title{
+        font-size: 60px;
+    }
+    .landingbutton{
+        width:150px;
+        height: 55px;
+    }
+}
