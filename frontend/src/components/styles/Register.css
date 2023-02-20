@@ -1,0 +1,163 @@
+.SignUpContainer {
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 25%;
+  left: 20%;
+  background-color: rgb(220, 226, 231);
+  box-sizing: border-box;
+  border-radius: 3%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.SignUpTitle{
+  color: rgba(0, 0, 0, 0.678);
+  font: 300 2vmax "Roboto",cursive;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  display: flex;
+  height: 3vmax;
+  padding: 2.1vmax;
+  margin-top: 2%;
+}
+
+.SignUpTitle:hover{
+  color: rgb(25,118,210);
+}
+
+.SignUpForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 4%;
+  padding: 4vmax;
+  justify-content: space-evenly;
+  height: 70%;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+/* .SignUpForm > div {
+  display: flex;
+  width: 130%;
+  align-items: center;
+} */
+
+.SignUpName {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1vmax;
+  /* margin-top: 2%; */
+  margin-right: 30%;
+  font: 300 1vmax "Roboto",cursive;
+  outline: none;
+}
+
+.SignUpName .AccountIcon {
+  padding-right: 1vmax;
+}
+
+.SignUpMail {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  /* padding: 0vmax; */
+  margin-right: 18%;
+  /* margin-top: 2%; */
+  font: 300 1vmax "Roboto",cursive;
+  outline: none;
+}
+
+.SignUpMail .MailIcon {
+  padding-right: 1vmax;
+}
+
+.SignUpPhone {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: .9vmax;
+  /* margin-top: 2%; */
+  margin-right: 28%;
+  font: 300 1vmax "Roboto",cursive;
+  outline: none;
+}
+
+/* for crome,edge and safari*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* for fire fox*/
+input[type="number"] {
+  appearance: textfield;
+}
+
+.SignUpPhone .PhoneIcon {
+  padding-right: 1vmax;
+}
+
+.SignUpPassword {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: .1vmax;
+  /* margin-top: 2%; */
+  margin-right: 20%;
+  font: 300 1vmax "Roboto",cursive;
+  outline: none;
+}
+
+.SignUpPassword .LockopenIcon {
+  padding-right: 1vmax;
+}
+
+.SignUpCPassword {
+  display: flex;
+  width: 114%;
+  align-items: center;
+  padding: .9vmax;
+  /* margin-top: 2%; */
+  margin-right: 14%;
+  font: 300 1vmax "Roboto",cursive;
+  outline: none;
+}
+
+.SignUpCPassword .LockIcon {
+  padding-right: 1vmax;
+}
+
+.SignUpButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: -1vmax;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  margin-right: 20%;
+  outline: none;
+}
+
+.SignUpimage {
+  margin-top: 6%;
+  margin-left: 5%;
+  height: 20vh;
+  width: 30vw;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+

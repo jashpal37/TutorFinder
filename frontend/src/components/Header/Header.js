@@ -10,7 +10,7 @@ const Header = () => {
     <Navbar bg="primary" expand="lg" varient="dark">
       <Container>
         <Navbar.Brand>
-          <Link to="/">Tutor Finder</Link>
+          <Link to="/" style={{fontFamily:'cursive'}}>Tutor Finder</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
