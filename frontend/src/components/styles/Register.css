@@ -1,3 +1,17 @@
+/* .SignUpMessage {
+  color: rgba(0, 0, 0, 0.678);
+  font: 300 2vmax "Roboto",cursive;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  display: flex;
+  height: 3vmax;
+  padding: 2.1vmax;
+  margin-top: 2%;
+} */
+
 .SignUpContainer {
   width: 60vw;
   height: 60vh;

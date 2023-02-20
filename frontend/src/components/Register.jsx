@@ -68,14 +68,20 @@ function Register() {
       window.alert("Invalid data");
     }
     else {
-      window.alert("Success");
+      window.alert("Success"); 
+      // <h1> Demo Purpose</h1>
+      // setTimeout(() => {
+      //     <div className="SignUpMessage">
+      //       <h1>Registrayion Successfull !!!</h1>
+      //     </div>;
+      // },3000);
       window.location.href = "/login";
     }
 
   }
   return (
     <>
-      {/* <div className="root"> */}
+      <div className="root">
       <div className="SignUpContainer">
         <div className="SignUpBox">
           <h2 className="SignUpTitle">SignUp</h2>
@@ -266,7 +272,7 @@ function Register() {
           </NavLink>
         </div>
       </div>
-      {/* </div> */}
+      </div>
     </>
   );
 }
