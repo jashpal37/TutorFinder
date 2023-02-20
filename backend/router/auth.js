@@ -5,7 +5,7 @@ const User = require('../models/userSchema');
 router.post('/register', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
     if (!name || !email || !phone || !password || !cpassword) {
-
+        
         return res.status(422).json({ error: "All fields are required" });
 
     }
@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
             return res.status(422).json({ error: "Email already exists" });
 
         } else if (password != cpassword) {
-
+            
             return res.status(422).json({ error: "Passwords do not match" });
 
         } else {
