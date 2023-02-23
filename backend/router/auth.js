@@ -44,6 +44,9 @@ router.post('/register', async (req, res) => {
 
 router.post('/signin', async (req, res)=> {
     const {email, password} = req.body;
+    if(!email || !password){
+        res.status(422).send({message: "Please enter data"});
+    }
     try{
         const userExists = await User.find({ email: email});
         if(!userExists){
