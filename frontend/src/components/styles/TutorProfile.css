@@ -1,0 +1,140 @@
+.ProfileContainer {
+  width: 60vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  background-color: rgb(220, 226, 231);
+  box-sizing: border-box;
+  border-radius: 3%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.ProfileTitle {
+  color: rgba(0, 0, 0, 0.678);
+  font: 300 2vmax "Roboto", cursive;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  display: flex;
+  height: 3vmax;
+  padding: 2.1vmax;
+  margin-top: 2%;
+}
+
+.ProfileTitle:hover {
+  color: rgb(25, 118, 210);
+}
+
+.ProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 4%;
+  padding: 4vmax;
+  justify-content: space-evenly;
+  height: 70%;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+/* .SignUpForm > div {
+  display: flex;
+  width: 130%;
+  align-items: center;
+} */
+
+.TutorName {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1vmax;
+  /* margin-top: 2%; */
+  margin-right: 30%;
+  font: 300 1vmax "Roboto", cursive;
+  outline: none;
+}
+
+.TutorMail {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  /* padding: 0vmax; */
+  margin-right: 18%;
+  /* margin-top: 2%; */
+  font: 300 1vmax "Roboto", cursive;
+  outline: none;
+}
+
+.TutorPhone {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0.9vmax;
+  /* margin-top: 2%; */
+  margin-right: 28%;
+  font: 300 1vmax "Roboto", cursive;
+  outline: none;
+}
+
+/* for crome,edge and safari*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* for fire fox*/
+input[type="number"] {
+  appearance: textfield;
+}
+
+.SubjectName {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0.1vmax;
+  /* margin-top: 2%; */
+  margin-right: 20%;
+  font: 300 1vmax "Roboto", cursive;
+  outline: none;
+}
+
+.SubjectCode {
+  display: flex;
+  width: 114%;
+  align-items: center;
+  padding: 0.9vmax;
+  /* margin-top: 2%; */
+  margin-right: 14%;
+  font: 300 1vmax "Roboto", cursive;
+  outline: none;
+}
+
+.SubjectDescription {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0.1vmax;
+  /* margin-top: 2%; */
+  margin-right: 20%;
+  font: 300 1vmax "Roboto", cursive;
+  outline: none;
+}
+
+.TutorButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0vmax;
+  margin-top: 6%;
+  margin-bottom: 1%;
+  margin-right: 20%;
+  outline: none;
+}

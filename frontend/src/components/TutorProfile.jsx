@@ -1,5 +1,6 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import { TextField,Button } from "@mui/material";
+import "./styles/TutorProfile.css"
 
 function TutorProfile() {
   return (
@@ -15,16 +16,7 @@ function TutorProfile() {
                   name="name"
                   id="name"
                   label="Name"
-                  variant="outlined"
-                  required
-                  autoComplete="off"
-                />
-                <TextField
-                  type="text"
-                  name="subjectname"
-                  id="subjectname"
-                  label="Subject Name"
-                  variant="outlined"
+                  variant="standard"
                   required
                   autoComplete="off"
                 />
@@ -35,7 +27,7 @@ function TutorProfile() {
                   type="email"
                   id="email"
                   label="Email"
-                  variant="outlined"
+                  variant="standard"
                   required
                   autoComplete="off"
                 />
@@ -47,7 +39,7 @@ function TutorProfile() {
                   id="phone"
                   label="Mobile No"
                   SelectProps={{ IconComponent: () => null }}
-                  variant="outlined"
+                  variant="standard"
                   required
                   autoComplete="off"
                 />
@@ -58,7 +50,7 @@ function TutorProfile() {
                   name="subjectname"
                   id="subjectname"
                   label="Subject Name"
-                  variant="outlined"
+                  variant="standard"
                   required
                   autoComplete="off"
                 />
@@ -69,7 +61,7 @@ function TutorProfile() {
                   name="subjectcode"
                   id="subjectcode"
                   label="Subject Code"
-                  variant="filled"
+                  variant="standard"
                   required
                   autoComplete="off"
                 />
@@ -80,11 +72,24 @@ function TutorProfile() {
                   name="subjectdesc"
                   id="subjectdesc"
                   label="Subject Description"
-                  variant="outlined"
+                  variant="standard"
                   required
                   multiline
                   autoComplete="off"
                 />
+              </div>
+              <div className="TutorButton">
+                <Button
+                  type="submit"
+                  // onClick={sendToServer}
+                  id="tutorbutton"
+                  variant="contained"
+                  style={{
+                    fontFamily: "cursive",
+                  }}
+                >
+                  Add
+                </Button>
               </div>
             </form>
           </div>

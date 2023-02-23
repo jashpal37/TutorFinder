@@ -14,8 +14,8 @@ function Home() {
               </p>
             </div>
             <div className="buttonContainer">
-              <a href="/">
-                <Button size="lg" className="landingbutton" variant='outline-primary'>
+              <a href="/tutor">
+                <Button size='lg' className="landingbutton" variant='outline-primary'>
                   Become a Tutor.
                 </Button>
               </a>
