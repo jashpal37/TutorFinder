@@ -5,6 +5,9 @@ import LandingPage from "./components/LandingPage";
 import  Login  from "./components/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
+import Home from "./components/Home";
+import ErrorPage from "./components/ErrorPage"
+import TutorProfile from "./components/TutorProfile";
 
 const App = function () {
   return (
@@ -15,6 +18,9 @@ const App = function () {
           <Route path="/" element={<LandingPage />} exact />
           <Route path="/login" element={<Login />} exact />
           <Route path="/signup" element={<Register />} exact />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/tutor" element={<TutorProfile />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* <Footer /> */}
       </div>
