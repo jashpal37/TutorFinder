@@ -44,7 +44,6 @@ router.post('/register', async (req, res) => {
 
 router.post('/signin', async (req, res)=> {
     const {email, password} = req.body;
-    // console.log(email, password);
     try{
         const userExists = await User.find({ email: email});
         if(!userExists){
