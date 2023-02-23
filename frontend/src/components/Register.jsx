@@ -63,9 +63,7 @@ function Register() {
         cpassword
       })
     });
-    const result = res.json();
-    if (result.status === 201) {
-      console.log(result.status);
+    if (res.status === 422 || !res) {
       window.alert("Invalid data");
     }
     else {

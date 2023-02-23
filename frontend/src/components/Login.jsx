@@ -13,14 +13,58 @@ import "./styles/Login.css"
 
 function Login() {
 
-const [showPassword, setShowPassword] = useState(false);
-const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
 
-const handleMouseDownPassword = (event) => {
-  event.preventDefault();
-};
-
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  const [userlogin, setUserLogin] = useState({
+    name: "",
+    password: ""
+  });
+  let name, value;
+  const handelInput = (e) => {
+    e.preventDefault();
+    name = e.target.name;
+    value = e.target.value;
+    setUserLogin({
+      ...userlogin,
+      [name]: value,
+    });
+  };
+  const serverUrl = "http://localhost:8000/signin";
+  const authenticate = async (e) => {
+    e.preventDefault();
+    try {
+      const { email, password } = userlogin;
+      const res = await fetch(serverUrl, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
+      if (res.status === 200) {
+        window.alert("Login successful");
+        window.location.href = "/home";
+      }
+      else if (res.status === 422) {
+        window.alert("Invalid credentials");
+        window.location.href = "/login";
+      }
+      else if (res.status === 404) {
+        window.alert("Please register your account");
+        window.location.href = "/register";
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return (
     <>
       <div className="SignInContainer">
@@ -34,13 +78,13 @@ const handleMouseDownPassword = (event) => {
             style={({ isActive }) =>
               isActive
                 ? {
-                    color: "black",
-                    fontFamily: "cursive",
-                  }
+                  color: "black",
+                  fontFamily: "cursive",
+                }
                 : {
-                    color: "blue",
-                    fontFamily: "cursive",
-                  }
+                  color: "blue",
+                  fontFamily: "cursive",
+                }
             }
           >
             Create a New Account ?
@@ -48,10 +92,13 @@ const handleMouseDownPassword = (event) => {
         </div>
         <div className="SignInBox">
           <h2 className="SignInTitle">SignIn</h2>
-          <form className="SigninForm" id="SignInForm">
+          <form className="SigninForm" id="SignInForm" method="POST">
             <div className="SignInMail">
               <TextField
                 type="email"
+                name="email"
+                value={userlogin.email}
+                onChange={handelInput}
                 id="email"
                 label="Email"
                 InputProps={{
@@ -73,6 +120,9 @@ const handleMouseDownPassword = (event) => {
             <div className="SignInPassword">
               <TextField
                 type={showPassword ? "text" : "password"}
+                name="password"
+                value={userlogin.password}
+                onChange={handelInput}
                 id="password"
                 label="Password"
                 InputProps={{
@@ -107,13 +157,13 @@ const handleMouseDownPassword = (event) => {
               style={({ isActive }) =>
                 isActive
                   ? {
-                      color: "black",
-                      fontFamily: "cursive",
-                    }
+                    color: "black",
+                    fontFamily: "cursive",
+                  }
                   : {
-                      color: "blue",
-                      fontFamily: "cursive",
-                    }
+                    color: "blue",
+                    fontFamily: "cursive",
+                  }
               }
             >
               Forgot Password ?
@@ -126,6 +176,7 @@ const handleMouseDownPassword = (event) => {
                 style={{
                   fontFamily: "cursive",
                 }}
+                onClick={authenticate}
               >
                 Log In
               </Button>
