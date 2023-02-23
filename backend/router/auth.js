@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/userSchema');
+const Tutor = require('../models/TutorSchema');
+
+router.post('/addtutor', async (req,res) => {
+    const {tutorName, tutorEmail, tutorPhone, subjectName, subejectCode, subjectDescription} = req.body;
+
+
+});
 
 router.post('/register', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
