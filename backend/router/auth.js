@@ -53,6 +53,8 @@ router.post('/signin', async (req, res)=> {
            return res.status(404).send({error: 'Please register first'});
         }
         if(userExists){
+            var user = userExists[0];
+            console.log(user);
             if(password === userExists[0].password){
                 return res.status(200).send({message: 'Login successful'});
             }else{
