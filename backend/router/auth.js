@@ -3,9 +3,11 @@ const router = express.Router();
 const User = require('../models/userSchema');
 const Tutor = require('../models/TutorSchema');
 
-// router.post('/addtutor', async (req,res) => {
-//     const {tutorName,}
-// })
+router.post('/addtutor', async (req,res) => {
+    const {tutorName, tutorEmail, tutorPhone, subjectName, subejectCode, subjectDescription} = req.body;
+
+
+});
 
 router.post('/register', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
@@ -39,5 +41,27 @@ router.post('/register', async (req, res) => {
 
     }
 });
+
+router.post('/signin', async (req, res)=> {
+    const {email, password} = req.body;
+    console.log(email, password);
+    try{
+        const userExists = await User.find({ email: email});
+        if(!userExists){
+           return res.status(404).send({error: 'Please register first'});
+        }
+        if(userExists){
+            if(password === userExists[0].password){
+                return res.status(200).send({message: 'Login successful'});
+            }else{
+                return res.status(422).send({error: 'Invalid credentials'});
+            }
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+
+})
 
 module.exports = router;
