@@ -64,7 +64,8 @@ function Register() {
       })
     });
     const result = res.json();
-    if (result.status === 422 || !result) {
+    if (result.status === 201) {
+      console.log(result.status);
       window.alert("Invalid data");
     }
     else {
@@ -130,7 +131,6 @@ function Register() {
                 }}
                 variant="standard"
                 required
-                autoFocus
                 autoComplete="off"
               />
             </div>
@@ -155,7 +155,6 @@ function Register() {
                 SelectProps={{ IconComponent: () => null }}
                 variant="standard"
                 required
-                autoFocus
                 autoComplete="off"
               />
             </div>
@@ -190,7 +189,6 @@ function Register() {
                 }}
                 variant="standard"
                 required
-                autoFocus
                 autoComplete="off"
               />
             </div>
@@ -225,7 +223,6 @@ function Register() {
                 }}
                 variant="standard"
                 required
-                autoFocus
                 autoComplete="off"
                 style={{
                   fontFamily: "cursive",

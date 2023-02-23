@@ -98,7 +98,6 @@ const handleMouseDownPassword = (event) => {
                 }}
                 variant="standard"
                 required
-                autoFocus
                 autoComplete="off"
               />
             </div>
