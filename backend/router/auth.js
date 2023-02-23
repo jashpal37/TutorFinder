@@ -5,6 +5,12 @@ const Tutor = require('../models/TutorSchema');
 
 router.post('/addtutor', async (req,res) => {
     const {tutorName, tutorEmail, tutorPhone, subjectName, subejectCode, subjectDescription} = req.body;
+    if (!tutorName || !tutorEmail || !tutorPhone || !subjectName || !subejectCode ||!subjectDescription) {
+        
+        return res.status(422).json({ error: "All fields are required" });
+
+    }
+
 
 
 });
