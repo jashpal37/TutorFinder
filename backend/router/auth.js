@@ -8,12 +8,22 @@ router.post('/addtutor', async (req,res) => {
     if (!tutorName || !tutorEmail || !tutorPhone || !subjectName || !subejectCode ||!subjectDescription) {
         
         return res.status(422).json({ error: "All fields are required" });
-
     }
 
+    const data=new Tutor({
+        tutorName:req.body.tutorName,
+        tutorEmail:req.body.tutorEmail,
+        tutorPhone:req.body.tutorPhone,
+        subjectName:req.body.subjectName,
+        subejectCode:req.body.subejectCode,
+        subjectDescription:req.body.subjectDescription
 
+    });
+    const val=await data.save();
+    res.json(val);
 
 });
+
 
 router.post('/register', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
