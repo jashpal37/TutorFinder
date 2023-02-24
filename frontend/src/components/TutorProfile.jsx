@@ -4,7 +4,12 @@ import "./styles/TutorProfile.css"
 
 function TutorProfile() {
   const [tutorData, setTutorData] = useState({
-
+    tutorName: "",
+    tutorEmail: "",
+    tutorPhone: "",
+    subjectName: undefined,
+    subjectCode: "",
+    subjectDescription: "",
   })
   let name, value;
   const handelInput = (e) => {
@@ -16,6 +21,33 @@ function TutorProfile() {
       [name]: value,
     });
   };
+  const serverUrl = "http://localhost:8000/addtutor";
+  const sendToServer = async (e) => {
+    e.preventDefault();
+    const {tutorName, tutorEmail, tutorPhone, subjectName, subjectCode, subjectDescription} = tutorData;
+    const res = await fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        tutorName,
+        tutorEmail,
+        tutorPhone,
+        subjectName,
+        subjectCode,
+        subjectDescription
+      })
+    });
+    if (res.status === 201) {
+      window.alert("Success");
+      window.location.href = "/subject";
+    }
+    else {
+      window.alert("Invalid data");
+    }
+
+  }
   return (
     <>
       <div className="root">
@@ -26,7 +58,8 @@ function TutorProfile() {
               <div className="TutorName">
                 <TextField
                   type="text"
-                  name="name"
+                  name="tutorName"
+                  value={tutorData.tutorName}
                   id="name"
                   onChange={handelInput}
                   label="Name"
@@ -37,7 +70,8 @@ function TutorProfile() {
               </div>
               <div className="TutorMail">
                 <TextField
-                  name="email"
+                  name="tutorEmail"
+                  value={tutorData.tutorEmail}
                   type="email"
                   id="email"
                   onChange={handelInput}
@@ -50,7 +84,8 @@ function TutorProfile() {
               <div className="TutorPhone">
                 <TextField
                   type="number"
-                  name="phone"
+                  name="tutorPhone"
+                  value={tutorData.tutorPhone}
                   id="phone"
                   onChange={handelInput}
                   label="Mobile No"
@@ -63,7 +98,8 @@ function TutorProfile() {
               <div className="SubjectName">
                 <TextField
                   type="text"
-                  name="subjectname"
+                  name="subjectName"
+                  value={tutorData.subjectName}
                   id="subjectname"
                   onChange={handelInput}
                   label="Subject Name"
@@ -75,7 +111,8 @@ function TutorProfile() {
               <div className="SubjectCode">
                 <TextField
                   type="text"
-                  name="subjectcode"
+                  name="subjectCode"
+                  value={tutorData.subjectCode}
                   id="subjectcode"
                   onChange={handelInput}
                   label="Subject Code"
@@ -87,7 +124,8 @@ function TutorProfile() {
               <div className="SubjectDescription">
                 <TextField
                   type="text"
-                  name="subjectdesc"
+                  name="subjectDescription"
+                  value={tutorData.subjectDescription}
                   id="subjectdesc"
                   onChange={handelInput}
                   label="Subject Description"
@@ -100,7 +138,7 @@ function TutorProfile() {
               <div className="TutorButton">
                 <Button
                   type="submit"
-                  // onClick={sendToServer}
+                  onClick={sendToServer}
                   id="tutorbutton"
                   variant="contained"
                   style={{

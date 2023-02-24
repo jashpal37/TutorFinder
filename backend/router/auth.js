@@ -78,8 +78,8 @@ router.post('/addtutor', async (req,res) => {
 
     });
 
-    const val=await data.save();
-    res.json(val);
+    const val= await data.save();
+    res.status(201).send({data: "Success!"});
 
 });
 
