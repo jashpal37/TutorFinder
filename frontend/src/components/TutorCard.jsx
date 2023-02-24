@@ -9,6 +9,8 @@ import {
 import { MailOutlined, ChromeReaderMode } from "@mui/icons-material";
 import { red } from "@mui/material/colors";
 import React from "react";
+import data from '../data/CourseData';
+import { Row } from "react-bootstrap";
 
 function TutorCard() {
   return (
@@ -40,11 +42,8 @@ function TutorCard() {
             consectetur libero hic ratione recusandae distinctio sed ut omnis.
             Nam, delectus ipsum?
           </Typography>
-          
         </CardContent>
-        
       </Card>
-      
     </>
   );
 }
