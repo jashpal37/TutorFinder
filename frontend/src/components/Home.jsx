@@ -15,7 +15,7 @@ function Home() {
             </div>
             <div className="buttonContainer">
               <a href="/tutor">
-                <Button size='lg' className="landingbutton" variant='outline-primary'>
+                <Button size='' className="landingbutton" variant='outline-primary'>
                   Become a Tutor.
                 </Button>
               </a>
