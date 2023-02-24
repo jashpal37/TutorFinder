@@ -1,8 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import { TextField,Button } from "@mui/material";
 import "./styles/TutorProfile.css"
 
 function TutorProfile() {
+  const [tutorData, setTutorData] = useState({
+
+  })
+  let name, value;
+  const handelInput = (e) => {
+    e.preventDefault();
+    name = e.target.name;
+    value = e.target.value;
+    setTutorData({
+      ...tutorData,
+      [name]: value,
+    });
+  };
   return (
     <>
       <div className="root">
@@ -15,6 +28,7 @@ function TutorProfile() {
                   type="text"
                   name="name"
                   id="name"
+                  onChange={handelInput}
                   label="Name"
                   variant="standard"
                   required
@@ -26,6 +40,7 @@ function TutorProfile() {
                   name="email"
                   type="email"
                   id="email"
+                  onChange={handelInput}
                   label="Email"
                   variant="standard"
                   required
@@ -37,6 +52,7 @@ function TutorProfile() {
                   type="number"
                   name="phone"
                   id="phone"
+                  onChange={handelInput}
                   label="Mobile No"
                   SelectProps={{ IconComponent: () => null }}
                   variant="standard"
@@ -49,6 +65,7 @@ function TutorProfile() {
                   type="text"
                   name="subjectname"
                   id="subjectname"
+                  onChange={handelInput}
                   label="Subject Name"
                   variant="standard"
                   required
@@ -60,6 +77,7 @@ function TutorProfile() {
                   type="text"
                   name="subjectcode"
                   id="subjectcode"
+                  onChange={handelInput}
                   label="Subject Code"
                   variant="standard"
                   required
@@ -71,6 +89,7 @@ function TutorProfile() {
                   type="text"
                   name="subjectdesc"
                   id="subjectdesc"
+                  onChange={handelInput}
                   label="Subject Description"
                   variant="standard"
                   required
