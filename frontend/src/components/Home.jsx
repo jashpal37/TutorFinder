@@ -19,7 +19,7 @@ function Home() {
                   Become a Tutor.
                 </Button>
               </a>
-              <a href="/">
+              <a href="/subject">
                 <Button
                   size="lg"
                   className="landingbutton"
