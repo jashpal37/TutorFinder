@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage"
 import TutorProfile from "./components/TutorProfile";
+import TutorCard from "./components/TutorCard";
 
 const App = function () {
   return (
@@ -20,6 +21,7 @@ const App = function () {
           <Route path="/signup" element={<Register />} exact />
           <Route path="/home" element={<Home/>} />
           <Route path="/tutor" element={<TutorProfile />} />
+          <Route path="/subject" element={<TutorCard />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* <Footer /> */}
