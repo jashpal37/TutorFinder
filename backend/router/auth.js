@@ -3,28 +3,6 @@ const router = express.Router();
 const User = require('../models/userSchema');
 const Tutor = require('../models/TutorSchema');
 
-router.post('/addtutor', async (req,res) => {
-    const {tutorName, tutorEmail, tutorPhone, subjectName, subejectCode, subjectDescription} = req.body;
-    if (!tutorName || !tutorEmail || !tutorPhone || !subjectName || !subejectCode ||!subjectDescription) {
-        
-        return res.status(422).json({ error: "All fields are required" });
-    }
-
-    const data=new Tutor({
-        tutorName:req.body.tutorName,
-        tutorEmail:req.body.tutorEmail,
-        tutorPhone:req.body.tutorPhone,
-        subjectName:req.body.subjectName,
-        subejectCode:req.body.subejectCode,
-        subjectDescription:req.body.subjectDescription
-
-    });
-    const val=await data.save();
-    res.json(val);
-
-});
-
-
 router.post('/register', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
     if (!name || !email || !phone || !password || !cpassword) {
@@ -80,6 +58,29 @@ router.post('/signin', async (req, res)=> {
         console.log(err);
     }
 
-})
+});
+
+
+router.post('/addtutor', async (req,res) => {
+    //const {tutorName, tutorEmail, tutorPhone, subjectName, subejectCode, subjectDescription} = req.body;
+    // if (!tutorName || !tutorEmail || !tutorPhone || !subjectName || !subejectCode ||!subjectDescription) {
+        
+    //     return res.status(422).json({ error: "All fields are required" });
+    // }
+
+    const data=new Tutor({
+        tutorName:req.body.tutorName,
+        tutorEmail:req.body.tutorEmail,
+        tutorPhone:req.body.tutorPhone,
+        subjectName:req.body.subjectName,
+        subjectCode:req.body.subjectCode,
+        subjectDescription:req.body.subjectDescription
+
+    });
+
+    const val=await data.save();
+    res.json(val);
+
+});
 
 module.exports = router;
