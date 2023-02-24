@@ -4,7 +4,7 @@ import {
   CardHeader,
   Typography,
   CardContent,
-  Rating
+  
 } from "@mui/material";
 import { MailOutlined, ChromeReaderMode } from "@mui/icons-material";
 import { red } from "@mui/material/colors";
