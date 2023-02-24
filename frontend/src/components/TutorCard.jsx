@@ -4,6 +4,7 @@ import {
   CardHeader,
   Typography,
   CardContent,
+  Rating
 } from "@mui/material";
 import { MailOutlined, ChromeReaderMode } from "@mui/icons-material";
 import { red } from "@mui/material/colors";
@@ -39,8 +40,11 @@ function TutorCard() {
             consectetur libero hic ratione recusandae distinctio sed ut omnis.
             Nam, delectus ipsum?
           </Typography>
+          
         </CardContent>
+        
       </Card>
+      
     </>
   );
 }
