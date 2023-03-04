@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 mongoose
   .connect(
-    "mongodb+srv://manthan:<password>@cluster0.etx0kun.mongodb.net/mernstack?retryWrites=true&w=majority",
+    "mongodb+srv://manthan:manthan123@cluster0.etx0kun.mongodb.net/mernstack?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
