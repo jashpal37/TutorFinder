@@ -20,7 +20,7 @@ function Home() {
   }
 
   function gotoAddCourse() {
-    navigate("/verifiycourse");
+    navigate("/mycourse");
   }
 
   return (

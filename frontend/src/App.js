@@ -21,7 +21,7 @@ const App = function () {
           <Route path="/" element={<LandingPage />} exact />
           <Route path="/login" element={<Login />} exact />
           <Route path="/signup" element={<Register />} exact />
-          <Route path="/home" element={<Home/>} />
+          <Route path="/home" element={<Home />} />
           <Route path="/tutor" element={<TutorProfile />} />
           <Route path="/subject" element={<TutorCard />} />
           <Route path="/adminlogin" element={<Adminlogin />} />
