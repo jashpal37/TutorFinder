@@ -37,14 +37,12 @@ function Login() {
     });
     
   };
-  const serverUrl = "http://localhost:8000/signin";
+  const serverUrl = "http://localhost:8000/adminsignin";
   const navigate = useNavigate();
   const authenticate = async (e) => {
     e.preventDefault();
     try {
       const { email, password } = userlogin;
-
-      // const emailData = userlogin.email;
       
       const res = await fetch(serverUrl, {
         method: 'POST',
@@ -59,9 +57,9 @@ function Login() {
       
       if (res.status === 200) {
         window.alert("Login successful");
-        const result = await res.json();
-        console.log(result.data._id);
-        navigate("/home", { state: { emailData: userlogin.email } });
+        //const result = await res.json();
+        //console.log(result.data._id);
+        navigate("/admin", { state: { emailData: userlogin.email } });
         // window.location.href = "/home";
       }
       else if (res.status === 422) {
