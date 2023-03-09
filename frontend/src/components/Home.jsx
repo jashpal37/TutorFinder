@@ -49,12 +49,13 @@ function Home() {
               >
                 Find a Tutor
               </Button>
+
               <Button
                 variant="contained"
                 onClick={gotoAddCourse}
                 sx={{ maxHeight: "150px", maxWidth: "150px" }}
               >
-                Add Course
+                  My Course
               </Button>
             </div>
           </div>

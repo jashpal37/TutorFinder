@@ -11,6 +11,7 @@ import TutorProfile from "./components/TutorProfile";
 import TutorCard from "./components/TutorCard";
 import Adminlogin from "./components/Adminlogin";
 import Admin from "./components/Admin";
+import Mycourse from "./components/mycourse";
 
 const App = function () {
   return (
@@ -27,7 +28,7 @@ const App = function () {
           <Route path="/adminlogin" element={<Adminlogin />} />
           <Route path="/admin" element={<Admin/>} />
           <Route path="*" element={<ErrorPage />} />
-          
+          <Route path="/mycourse" element={<Mycourse/>} />
           
         </Routes>
         {/* <Footer /> */}
