@@ -1,12 +1,13 @@
-import React,{useState} from "react";
-import { TextField,Button } from "@mui/material";
+import React, { useState } from "react";
+import { TextField, Button } from "@mui/material";
 import "./styles/TutorProfile.css";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 function TutorProfile() {
-
+  const navigate = useNavigate();
   const location = useLocation();
   const email = location.state.email;
+  const id = location.state.Id;
   // console.log(email);
 
 
@@ -16,10 +17,10 @@ function TutorProfile() {
     console.log("togglemodel");
     setModal(!modal);
   };
-  const acceptModal = () => {
-    console.log("acceptmodel");
-    setModal(!modal);
-  };
+  // const acceptModal = () => {
+  //   console.log("acceptmodel");
+  //   setModal(!modal);
+  // };
   const closeModal = () => {
     console.log("closemodel");
     setModal(!modal);
@@ -51,10 +52,11 @@ function TutorProfile() {
       [name]: value,
     });
   };
-  const serverUrl = "http://localhost:8000/addtutor";
+  const serverUrl = `http://localhost:8000/addcourse/${id}`;
   const sendToServer = async (e) => {
     e.preventDefault();
-    const {tutorName, tutorEmail, tutorPhone, subjectName, subjectCode, subjectDescription} = tutorData;
+    const { tutorName, tutorPhone, subjectName, subjectCode, subjectDescription } = tutorData;
+    const tutorEmail = location.state.email;
     const res = await fetch(serverUrl, {
       method: 'POST',
       headers: {
@@ -71,7 +73,8 @@ function TutorProfile() {
     });
     if (res.status === 201) {
       window.alert("Success");
-      window.location.href = "/subject";
+      navigate('/wdfgh');
+      //window.location.href = "/subject";
     }
     else {
       window.alert("Invalid data");
@@ -166,7 +169,6 @@ function TutorProfile() {
             </div>
             <div className="TutorButton">
               <Button
-                type="submit"
                 onClick={toggleModal}
                 id="tutorbutton"
                 variant="contained"
@@ -193,7 +195,7 @@ function TutorProfile() {
               quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
               placeat tempora vitae enim incidunt porro fuga ea.
             </p>
-            <button className="accept-modal" onClick={acceptModal} >
+            <button className="accept-modal" onClick={sendToServer} >
               ACCEPT
             </button>
             <button className="close-modal" onClick={closeModal}>

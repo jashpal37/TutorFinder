@@ -61,7 +61,7 @@ function Login() {
         window.alert("Login successful");
         const result = await res.json();
         console.log(result.data._id);
-        navigate("/home", { state: { emailData: userlogin.email } });
+        navigate("/home", { state: { emailData: userlogin.email, Id: result.data._id } });
         // window.location.href = "/home";
       }
       else if (res.status === 422) {
