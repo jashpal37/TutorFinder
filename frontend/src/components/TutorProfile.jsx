@@ -196,10 +196,21 @@ function TutorProfile() {
               quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
               placeat tempora vitae enim incidunt porro fuga ea.
             </p>
-            <button className="accept-modal" onClick={sendToServer} >
+            <button
+              className="accept-modal"
+              onClick={sendToServer}
+              type="button"
+              class="btn btn-success"
+            >
               ACCEPT
             </button>
-            <button className="close-modal" onClick={closeModal}>
+            <br />
+            <button
+              className="close-modal"
+              onClick={closeModal}
+              type="button"
+              class="btn btn-danger"
+            >
               CLOSE
             </button>
           </div>
