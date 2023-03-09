@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import loginpic from "./../signin.svg";
 import { TextField, Button, InputAdornment, IconButton } from "@mui/material";
 import {
@@ -13,6 +13,7 @@ import "./styles/Login.css"
 
 function Login() {
 
+
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -24,6 +25,7 @@ function Login() {
     name: "",
     password: ""
   });
+
   let name, value;
   const handelInput = (e) => {
     e.preventDefault();
@@ -33,12 +35,17 @@ function Login() {
       ...userlogin,
       [name]: value,
     });
+    
   };
   const serverUrl = "http://localhost:8000/signin";
+  const navigate = useNavigate();
   const authenticate = async (e) => {
     e.preventDefault();
     try {
       const { email, password } = userlogin;
+
+      // const emailData = userlogin.email;
+      
       const res = await fetch(serverUrl, {
         method: 'POST',
         headers: {
@@ -49,9 +56,13 @@ function Login() {
           password
         })
       });
+      
       if (res.status === 200) {
         window.alert("Login successful");
-        window.location.href = "/home";
+        const result = await res.json();
+        console.log(result.data._id);
+        navigate("/home", { state: { emailData: userlogin.email } });
+        // window.location.href = "/home";
       }
       else if (res.status === 422) {
         window.alert("Invalid credentials");
