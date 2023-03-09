@@ -24,6 +24,13 @@ const LandingPage = () => {
                   Signup
                 </Button>
               </a>
+
+              <a href='/adminlogin'>
+                <Button size="lg" className="landingbuttong" variant='outline-primary'>
+                  Admin
+                </Button>
+              </a>
+
             </div>
           </div>
         </Row>

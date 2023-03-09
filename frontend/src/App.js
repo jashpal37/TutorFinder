@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage"
 import TutorProfile from "./components/TutorProfile";
 import TutorCard from "./components/TutorCard";
+import Adminlogin from "./components/Adminlogin";
 
 const App = function () {
   return (
@@ -22,7 +23,10 @@ const App = function () {
           <Route path="/home" element={<Home/>} />
           <Route path="/tutor" element={<TutorProfile />} />
           <Route path="/subject" element={<TutorCard />} />
+          <Route path="/adminlogin" element={<Adminlogin />} />
           <Route path="*" element={<ErrorPage />} />
+          
+          
         </Routes>
         {/* <Footer /> */}
       </div>
