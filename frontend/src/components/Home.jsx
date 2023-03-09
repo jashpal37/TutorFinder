@@ -1,11 +1,32 @@
 import React from 'react';
-import { Container, Button, Row } from 'react-bootstrap';
+import { Container,Button, Grid } from '@mui/material';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Home() {
+
+  const location = useLocation();
+  let emailData = location.state.emailData;
+  // let Id = location.state.Id;
+  console.log(location.state);
+  
+
+  const navigate = useNavigate();
+  function handleEmail(){
+    navigate("/tutor", { state : { email : emailData}})
+  }
+
+  function gotoSubject() {
+    navigate("/subject");
+  }
+
+  function gotoAddCourse() {
+    navigate("/verifiycourse");
+  }
+
   return (
     <>
       <Container>
-        <Row>
+        <Grid>
           <div className="intro-text">
             <div>
               <h1 className="title">Welcome to Tutor Finder</h1>
@@ -14,26 +35,30 @@ function Home() {
               </p>
             </div>
             <div className="buttonContainer">
-              <a href="/tutor">
-                <Button
-                  size=""
-                  className="landingbutton"
-                  variant="outline-primary">
-                  Become a Tutor.
-                </Button>
-              </a>
-              <a href="/subject">
-                <Button
-                  size=""
-                  className="landingbutton"
-                  variant="outline-primary"
-                >
-                  Find a Tutor.
-                </Button>
-              </a>
+              <Button
+                variant="contained"
+                onClick={handleEmail}
+                sx={{ maxHeight: "150px", maxWidth: "150px" }}
+              >
+                Become a Tutor
+              </Button>
+              <Button
+                variant="contained"
+                onClick={gotoSubject}
+                sx={{ maxHeight: "150px", maxWidth: "150px" }}
+              >
+                Find a Tutor
+              </Button>
+              <Button
+                variant="contained"
+                onClick={gotoAddCourse}
+                sx={{ maxHeight: "150px", maxWidth: "150px" }}
+              >
+                Add Course
+              </Button>
             </div>
           </div>
-        </Row>
+        </Grid>
       </Container>
     </>
   );

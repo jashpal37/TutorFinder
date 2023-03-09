@@ -1,8 +1,15 @@
 import React,{useState} from "react";
 import { TextField,Button } from "@mui/material";
-import "./styles/TutorProfile.css"
+import "./styles/TutorProfile.css";
+import { useLocation } from "react-router-dom";
 
 function TutorProfile() {
+
+  const location = useLocation();
+  const email = location.state.email;
+  // console.log(email);
+
+
   const [tutorData, setTutorData] = useState({
     tutorName: "",
     tutorEmail: "",
@@ -71,14 +78,14 @@ function TutorProfile() {
               <div className="TutorMail">
                 <TextField
                   name="tutorEmail"
-                  value={tutorData.tutorEmail}
+                  value={email}
                   type="email"
                   id="email"
-                  onChange={handelInput}
                   label="Email"
                   variant="standard"
                   required
                   autoComplete="off"
+                  disabled
                 />
               </div>
               <div className="TutorPhone">
