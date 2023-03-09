@@ -9,7 +9,8 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage"
 import TutorProfile from "./components/TutorProfile";
 import TutorCard from "./components/TutorCard";
-import MyCourse from "./components/MyCourse";
+import Adminlogin from "./components/Adminlogin";
+import Admin from "./components/Admin";
 
 const App = function () {
   return (
@@ -23,8 +24,11 @@ const App = function () {
           <Route path="/home" element={<Home />} />
           <Route path="/tutor" element={<TutorProfile />} />
           <Route path="/subject" element={<TutorCard />} />
-          <Route path="/mycourse" element={<MyCourse />} />
+          <Route path="/adminlogin" element={<Adminlogin />} />
+          <Route path="/admin" element={<Admin/>} />
           <Route path="*" element={<ErrorPage />} />
+          
+          
         </Routes>
         {/* <Footer /> */}
       </div>
