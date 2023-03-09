@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage"
 import TutorProfile from "./components/TutorProfile";
 import TutorCard from "./components/TutorCard";
+import MyCourse from "./components/MyCourse";
 
 const App = function () {
   return (
@@ -19,9 +20,10 @@ const App = function () {
           <Route path="/" element={<LandingPage />} exact />
           <Route path="/login" element={<Login />} exact />
           <Route path="/signup" element={<Register />} exact />
-          <Route path="/home" element={<Home/>} />
+          <Route path="/home" element={<Home />} />
           <Route path="/tutor" element={<TutorProfile />} />
           <Route path="/subject" element={<TutorCard />} />
+          <Route path="/mycourse" element={<MyCourse />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* <Footer /> */}
