@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { TextField,Button } from "@mui/material";
 import "./styles/TutorProfile.css";
+import "./styles/PopUp.css";
 import { useLocation } from "react-router-dom";
 
 function TutorProfile() {
