@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema({
     cpassword: {
         type: String,
         required: true
+    },
+    isTutor: {
+        type: Boolean,
+        required: true
     }
 });
 

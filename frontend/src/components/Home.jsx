@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container,Button,Row } from 'react-bootstrap';
+import { Container, Button, Row } from 'react-bootstrap';
 
 function Home() {
   return (
@@ -15,13 +15,16 @@ function Home() {
             </div>
             <div className="buttonContainer">
               <a href="/tutor">
-                <Button size='' className="landingbutton" variant='outline-primary'>
+                <Button
+                  size=""
+                  className="landingbutton"
+                  variant="outline-primary">
                   Become a Tutor.
                 </Button>
               </a>
               <a href="/subject">
                 <Button
-                  size="lg"
+                  size=""
                   className="landingbutton"
                   variant="outline-primary"
                 >
