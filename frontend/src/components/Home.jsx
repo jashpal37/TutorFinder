@@ -6,13 +6,13 @@ function Home() {
 
   const location = useLocation();
   let emailData = location.state.emailData;
-  // let Id = location.state.Id;
+  let Id = location.state.Id;
   console.log(location.state);
   
 
   const navigate = useNavigate();
   function handleEmail(){
-    navigate("/tutor", { state : { email : emailData}})
+    navigate("/tutor", { state : { email : emailData, Id : Id}})
   }
 
   function gotoSubject() {
