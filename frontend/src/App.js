@@ -11,7 +11,7 @@ import TutorProfile from "./components/TutorProfile";
 import TutorCard from "./components/TutorCard";
 import Adminlogin from "./components/Adminlogin";
 import Admin from "./components/Admin";
-import Mycourse from "./components/mycourse";
+import Mycourse from "./components/MyCourse";
 
 const App = function () {
   return (
@@ -26,10 +26,9 @@ const App = function () {
           <Route path="/tutor" element={<TutorProfile />} />
           <Route path="/subject" element={<TutorCard />} />
           <Route path="/adminlogin" element={<Adminlogin />} />
-          <Route path="/admin" element={<Admin/>} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/mycourse" element={<Mycourse />} />
           <Route path="*" element={<ErrorPage />} />
-          <Route path="/mycourse" element={<Mycourse/>} />
-          
         </Routes>
         {/* <Footer /> */}
       </div>

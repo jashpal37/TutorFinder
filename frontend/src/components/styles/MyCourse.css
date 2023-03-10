@@ -1,0 +1,309 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.preloader{
+    margin-left: 45%;
+    margin-top: 25%;
+    /* background-color: #DC3545; */
+}
+.book{
+    padding-top: 0.1rem;
+    padding-bottom: 1rem;
+    
+    display: inline;
+    place-items: center;
+}
+.center h3{
+    font-size: 42px;
+    font-weight: 700;
+    color: #001d38;
+    font-family: 'Nuosu SIL', serif;
+}
+.row{
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.single-book{
+    width: 350px;
+    border-radius: 1.7rem;
+    box-shadow: 0 5px 15px rgba(2, 164, 24, 0.05);
+    margin-left: 2.5rem;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 0..1rem solid rgb(0, 0, 0);
+}
+.column{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.book-thumb{
+    position: relative;
+    overflow: hidden;
+}
+.book-tag-verify{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #91ee91;
+    padding: 8px 14px;
+    color: #000;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1;
+    font-family: "Poppins", sans-serif;
+}
+.book-tag-pending{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #f08080;
+    padding: 8px 14px;
+    color: #000;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1;
+    font-family: "Poppins", sans-serif;
+}
+.book-thumb {
+    width: 350px;
+    vertical-align: middle;
+    transition: .3s;
+    height: 75px;
+    background-color: #000;
+}
+
+.book-content{
+    padding: 25px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.book-content h4{
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #001d38;
+    font-weight: 10000;
+    font-family: "Poppins", sans-serif;
+}
+.mark span{
+    font-size: 12px;
+    font-weight: 400;
+    color: #919191;
+    margin-left: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+.download-book{
+    padding-top: 1rem;
+}
+.download-book .book-btn-download{
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 2rem;
+    font-size: 10px;
+    border: 1px solid #71C562;
+    background-color: #71C562 ;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    color: white;
+}
+.download-book .book-btn-download:hover{
+    color: #71C562;
+    background-color: white;
+}
+.download-book .book-btn-update{
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 2rem;
+    font-size: 10px;
+    border: 1px solid #1e90ff;
+    background-color: #1e90ff;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    color: white;
+}
+.download-book .book-btn-update:hover{
+    color: #1e90ff;
+    background-color: white;
+}
+.download-book .book-btn-delete{
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 2rem;
+    font-size: 10px;
+    border: 1px solid #DC3545;
+    background-color: #DC3545;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    color: white;
+}
+.download-book .book-btn-delete:hover{
+    color: #DC3545;
+    background-color: white;
+}
+
+.book-data {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.dash-btn Button{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 2rem;
+    font-size: 12px;
+    border: 1px solid #71C562;
+    background-color: #71C562 ;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    color: #000;
+}
+
+.dash-btn Button:hover{
+    background-color: #fff;
+    color: #000;
+}
+.dash-btn-disabled button:hover{
+    background-color: #fff;
+    color: #000;
+}
+.dash-btn-disabled button {
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 2rem;
+    font-size: 12px;
+    border: 1px solid #f08080;
+    background-color: #f08080 ;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    color: #000;
+    /* text-decoration: line-through red 1.5px; */
+}
+
+/* @media screen and (max-width:1156px){
+    .row{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width:768px){
+    .book{
+        padding-bottom: 2rem;
+    }
+    .row{
+        grid-template-columns: 1fr;
+    }
+    .single-book{
+        width: 500px;
+    }
+    .column{
+        padding-bottom: 2rem;
+    }
+    .book-thumb img{
+        width: 500px;
+    }
+    .book-content{
+        padding: 15px;
+    }
+    .download-book{
+        padding-top: .5rem;
+    }
+} */
+/* @media screen and (max-width:560px){
+    .single-boon{
+        width: 450px;
+    }
+    .book-thumb img{
+        width: 450px;
+    }
+    .column{
+        padding-bottom: 1rem;
+    }
+}
+@media screen and (max-width:483px){
+    .center h4{
+        font-size: 35px;
+    }
+    .single-book{
+        width: 400px;
+    }
+    .book-thumb img{
+        width: 400px;
+    }
+    .download-book .book-btn{
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:430px){
+    .single-book{
+        width: 350px;
+    }
+    .book-thumb img{
+        width: 350px;
+    }
+    .column{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media screen and (max-width:383px){
+    .book h3{
+        font-size: 28px;
+    }
+    .book-content h3{
+        font-size: 14px;
+    }
+    .single-book{
+        width: 300px;
+    }
+    .book-thumb img{
+        width: 300px;
+    }
+    .column{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media screen and (max-width:321px){
+    .single-book{
+        width: 270px;
+    }
+    .book-thumb img{
+        width: 270px;
+    }
+    .column{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media screen and (max-width:291px){
+    .single-book{
+        width: 230px;
+    }
+    .book-thumb img{
+        width: 230px;
+    }
+    .book-content{
+        padding: 10px;
+    }
+} */
