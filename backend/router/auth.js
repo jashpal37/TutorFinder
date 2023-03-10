@@ -7,6 +7,7 @@ const GetAllCourse = require('../controller/GetAllCourse');
 const AdminSignIn = require('../controller/AdminSignIn');
 const GetCourseForAdmin = require('../controller/GetCourseForAdmin');
 const GetAllTutors = require('../controller/GetAllTutors');
+const GetAllCourseForUser = require('../controller/GetAllCourseForUser');
 
 router.post('/register', Register);
 
@@ -21,5 +22,7 @@ router.get('/getallcourse', GetAllCourse);
 router.get('/getcourseforadmin', GetCourseForAdmin);
 
 router.get('/getalltutors', GetAllTutors);
+
+router.post('/getallcourseforuser', GetAllCourseForUser);
 
 module.exports = router;

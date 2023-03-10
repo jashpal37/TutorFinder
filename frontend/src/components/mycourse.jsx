@@ -1,8 +1,11 @@
-import React,{ Fragment } from 'react';
+import React,{ Fragment, useEffect } from 'react';
 import { Button } from '@mui/material';
 import "./styles/MyCourse.css";
 
 function MyCourse() {
+  useEffect(() => {
+    
+  },[])
   return (
     <>
       <section className="book">
@@ -20,15 +23,15 @@ function MyCourse() {
                         </div>
 
                         <div className="book-content">
-                          <h4 name="bookName">Test5</h4>
+                          <h4 name="tutorName">Test5</h4>
                           <div className="mark">
-                            <span>Network Info..</span>
+                            <span name="subjectDecription">Network Info..</span>
                           </div>
                           <div className="book-data">
-                            <h5>
+                            <h5 name="subjectName">
                               Subject Name:&nbsp;&nbsp;NIS
                             </h5>
-                            <h5>
+                            <h5 name="subjectCode">
                               Subject Code:&nbsp;&nbsp;CS107
                             </h5>
                           </div>
