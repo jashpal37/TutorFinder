@@ -1,8 +1,14 @@
 import React,{ Fragment, useEffect } from 'react';
 import { Button } from '@mui/material';
 import "./styles/MyCourse.css";
+import { useLocation } from 'react-router-dom';
 
 function MyCourse() {
+
+  const location = useLocation();
+  let email = location.state.email;
+  console.log(email);
+
   useEffect(() => {
     
   },[])

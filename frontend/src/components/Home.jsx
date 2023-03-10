@@ -20,7 +20,7 @@ function Home() {
   }
 
   function gotoAddCourse() {
-    navigate("/mycourse");
+    navigate("/mycourse", { state: { email: emailData } });
   }
 
   return (
