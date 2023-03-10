@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Login.css"
 
-function Login() {
+function Admin() {
   return (
     <>
     <p>kasjdl;fkajdfl</p>
@@ -9,4 +9,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Admin;
